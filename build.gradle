@@ -1,0 +1,11 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'is.ru.stringcalculator.StringCalculator'
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {
+		testImplementation 'junit:junit:4.12'
+	}

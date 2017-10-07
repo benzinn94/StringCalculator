@@ -41,7 +41,7 @@ gradle-app.setting
 .DS_Store
 
 # Ignore gradle files
-build.gradle
+build.gradle/
 build/
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
