@@ -9,4 +9,13 @@ public class CalculatorTest{
 		assertEquals(0, StringCalculator.add(""));
 	}
 
+	@Test
+	public void testOneNumber(){
+		assertEquals(1, StringCalculator.add("1"));
+	}
+
+	@Test
+	public void testTwoNumbers(){
+		assertEquals(2, StringCalculator.add("1,1"));
+	}
 }
