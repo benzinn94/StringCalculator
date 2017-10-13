@@ -36,4 +36,10 @@ public class CalculatorTest{
 	public void testNegativeNumbers(){
 		StringCalculator.add("-1,-3,-5,6");
 	}
+
+	@Test
+	public void checkNumbersAboveThousand(){
+		assertEquals(1025, StringCalculator.add("10,1009,1005,1000,15"));
+	}
+
 }

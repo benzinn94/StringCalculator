@@ -10,6 +10,7 @@ public class StringCalculator{
 			text = replaceNewLines(text);
 			String numbers [] = text.split(",");
 			checkNegativeNumbers(numbers);
+			numbers = checkNumbersAboveThousand(numbers);
 			return sum(numbers);
 		}
 		else{
@@ -46,6 +47,16 @@ public class StringCalculator{
 			throw new IllegalArgumentException("Negatives not allowed: " + listOfNegatives);
 		}
 	}
+
+	public static String[] checkNumbersAboveThousand(String [] numbers){
+		for(int i = 0; i < numbers.length; i++){
+			if(toInt(numbers[i]) > 1000){
+				numbers[i] = "0";
+			}
+		}
+		return numbers;
+	}
+
 	public static void main(String[] args){
 	}
 }
