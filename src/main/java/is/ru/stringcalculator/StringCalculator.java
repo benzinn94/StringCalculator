@@ -9,6 +9,7 @@ public class StringCalculator{
 		if(text.contains(",") || text.contains("\n")){
 			text = replaceNewLines(text);
 			String numbers [] = text.split(",");
+			checkNegativeNumbers(numbers);
 			return sum(numbers);
 		}
 		else{
@@ -32,7 +33,19 @@ public class StringCalculator{
 		number = number.replaceAll("\n", ",");
 		return number;
 	}
-	public static void main(String[] args){
 
+	private static void checkNegativeNumbers(String [] numbers){
+		String listOfNegatives = "";
+		for(String number: numbers){
+			if(toInt(number) < 0){
+				listOfNegatives += number + " ";
+			}
+		}
+
+		if(!listOfNegatives.equals("")){
+			throw new IllegalArgumentException("Negatives not allowed: " + listOfNegatives);
+		}
+	}
+	public static void main(String[] args){
 	}
 }
