@@ -26,4 +26,9 @@ public class CalculatorTest{
 	public void testMultipleNumbers(){
 		assertEquals(300, StringCalculator.add("100,50,40,10,60,20,20"));
 	}
+
+	@Test
+	public void testWithNewLines(){
+		assertEquals(10, StringCalculator.add("1\n2,7"));
+	}
 }
