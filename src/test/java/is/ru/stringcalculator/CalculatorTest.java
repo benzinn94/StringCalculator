@@ -42,4 +42,10 @@ public class CalculatorTest{
 		assertEquals(1025, StringCalculator.add("10,1009,1005,1000,15"));
 	}
 
+	@Test
+	public void testNewDelimeter(){
+		assertEquals(4,StringCalculator.add("//;,1,1;1;1"));
+		
+	}
+
 }

@@ -8,6 +8,7 @@ public class StringCalculator{
 		}
 		if(text.contains(",") || text.contains("\n")){
 			text = replaceNewLines(text);
+			text = addDelimiter(text);
 			String numbers [] = text.split(",");
 			checkNegativeNumbers(numbers);
 			numbers = checkNumbersAboveThousand(numbers);
@@ -55,6 +56,18 @@ public class StringCalculator{
 			}
 		}
 		return numbers;
+	}
+
+	public static String addDelimiter(String number){
+		String temp = "";
+		if(number.startsWith("//")){
+			char delim = number.charAt(2);
+			temp = temp + delim;
+			number = number.substring(4);
+			number = number.replaceAll(temp, ",");
+		}
+
+		return number;
 	}
 
 	public static void main(String[] args){
